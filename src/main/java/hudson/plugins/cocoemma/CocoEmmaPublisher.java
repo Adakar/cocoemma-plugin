@@ -168,7 +168,7 @@ public class CocoEmmaPublisher extends Recorder {
         
         logger.println("Emma: " + action.getBuildHealth().getDescription());
         
-        build.getActions().add(action);
+        build.addAction(action);
 
         final CoverageReport result = action.getResult();
         if (result == null) {
