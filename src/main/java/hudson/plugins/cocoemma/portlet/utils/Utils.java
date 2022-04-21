@@ -33,9 +33,7 @@ import hudson.model.Job;
 import hudson.model.Run;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.TimeZone;
 import java.time.LocalDate;
-import java.time.ZoneId;
 
 /**
  * Defines common methods that are used for the whole project.
