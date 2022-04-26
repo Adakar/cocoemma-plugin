@@ -228,7 +228,7 @@ public abstract class CoverageObject<SELF extends CoverageObject<SELF>> extends 
                 DataSetBuilder<String, NumberOnlyBuildLabel> dsb = new DataSetBuilder<String, NumberOnlyBuildLabel>();
 
                 for (CoverageObject<SELF> a = obj; a != null; a = a.getPreviousResult()) {                  
-                    NumberOnlyBuildLabel label = new NumberOnlyBuildLabel( (Run)a.getBuild());
+                    NumberOnlyBuildLabel label = new NumberOnlyBuildLabel( a.getBuild());
                     dsb.add(a.clazz.getPercentageFloat(getTestNotMandatory()), a.getClassDataColumnDescriptor(), label);
                     dsb.add(a.method.getPercentageFloat(getTestNotMandatory()), a.getMethodDataColumnDescriptor(), label);
                     dsb.add(a.block.getPercentageFloat(getTestNotMandatory()), a.getBlockDataColumnDescriptor(), label);

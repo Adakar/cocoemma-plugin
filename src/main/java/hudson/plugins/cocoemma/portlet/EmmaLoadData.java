@@ -84,7 +84,7 @@ public final class EmmaLoadData {
     // date range (last build date minus number of days)
     for (Job job : jobs) {
 
-      Run run = job.getLastBuild();
+      Run<?, ?> run = job.getLastBuild();
 
       if (null != run) {
         LocalDate runDate = LocalDate.ofEpochDay(run.getTimestamp().toInstant().getEpochSecond());
@@ -126,7 +126,7 @@ public final class EmmaLoadData {
    * @param job
    *          job from the DashBoard Portlet view
    */
-  private static void summarize(Map<LocalDate, EmmaCoverageResultSummary> summaries, Run run, LocalDate runDate, Job job) {
+  private static void summarize(Map<LocalDate, EmmaCoverageResultSummary> summaries, Run<?, ?> run, LocalDate runDate, Job job) {
 
     EmmaCoverageResultSummary emmaCoverageResult = getResult(run);
 
@@ -173,7 +173,7 @@ public final class EmmaLoadData {
    *          a job execution
    * @return EmmaCoverageTestResult the coverage result
    */
-  private static EmmaCoverageResultSummary getResult(Run run) {
+  private static EmmaCoverageResultSummary getResult(Run<?, ?> run) {
     CocoEmmaBuildAction cocoEmmaAction = run.getAction(CocoEmmaBuildAction.class);
 
     float blockCoverage = 0.0f;
@@ -245,7 +245,7 @@ public final class EmmaLoadData {
       float mcdcCoverage = 0.0f;
       float mccCoverage = 0.0f;
 
-      Run run = job.getLastSuccessfulBuild();
+      Run<?, ?> run = job.getLastSuccessfulBuild();
 
       if (run != null) {
 
