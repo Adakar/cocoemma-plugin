@@ -32,6 +32,7 @@ package hudson.plugins.cocoemma.portlet.utils;
 import hudson.model.Job;
 import hudson.model.Run;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.time.LocalDate;
 
@@ -120,7 +121,7 @@ public final class Utils {
    *          the value to be rounded
    * @return the rounded value
    */
-  public static float roundFLoat(int scale, int roundingMode, float value) {
+  public static float roundFLoat(int scale, RoundingMode roundingMode, float value) {
     BigDecimal bigDecimal = new BigDecimal(value);
     bigDecimal = bigDecimal.setScale(scale, roundingMode);
     return bigDecimal.floatValue();

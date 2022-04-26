@@ -2,7 +2,7 @@ package hudson.plugins.cocoemma.portlet.utils;
 
 import hudson.model.FreeStyleProject;
 import hudson.model.Job;
-import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
@@ -36,14 +36,13 @@ public class UtilsHudsonTest extends HudsonTestCase {
   }
 
   /**
-   * Tests {@link hudson.plugins.cocoemma.portlet.utils.Utils#roundFLoat(int scale, int roundingMode, float value) }.
+   * Tests {@link hudson.plugins.cocoemma.portlet.utils.Utils#roundFLoat(int scale, RoundingMode roundingMode, float value) }.
    */
   public void testRoundFloat() {
     int scale = 1;
-    int roundingMode = BigDecimal.ROUND_HALF_EVEN;
     final float value = 9.987f;
     final float roundedAs = 10f;
 
-    assertEquals(roundedAs, Utils.roundFLoat(scale, roundingMode, value));
+    assertEquals(roundedAs, Utils.roundFLoat(scale, RoundingMode.HALF_EVEN, value));
   }
 }

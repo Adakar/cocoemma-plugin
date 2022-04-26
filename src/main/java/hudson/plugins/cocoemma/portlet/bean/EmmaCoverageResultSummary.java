@@ -32,7 +32,7 @@ package hudson.plugins.cocoemma.portlet.bean;
 import hudson.model.Job;
 import hudson.plugins.cocoemma.portlet.utils.Utils;
 
-import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -173,7 +173,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float totalClass = this.getClassCoverage() / this.getCoverageResults().size();
-      totalClass = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, totalClass);
+      totalClass = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, totalClass);
       return totalClass;
     }
   }
@@ -188,7 +188,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float totalBlock = this.getBlockCoverage() / this.getCoverageResults().size();
-      totalBlock = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, totalBlock);
+      totalBlock = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, totalBlock);
       return totalBlock;
     }
   }
@@ -203,7 +203,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float totalLine = this.getLineCoverage() / this.getCoverageResults().size();
-      totalLine = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, totalLine);
+      totalLine = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, totalLine);
       return totalLine;
     }
   }
@@ -218,7 +218,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float total = this.getDecisionCoverage() / this.getCoverageResults().size();
-      total = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, total);
+      total = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, total);
       return total;
     }
   }
@@ -233,7 +233,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float totalCondition = this.getConditionCoverage() / this.getCoverageResults().size();
-      totalCondition = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, totalCondition);
+      totalCondition = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, totalCondition);
       return totalCondition;
     }
   }
@@ -248,7 +248,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float total = this.getMccCoverage() / this.getCoverageResults().size();
-      total = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, total);
+      total = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, total);
       return total;
     }
   }
@@ -263,7 +263,7 @@ public class EmmaCoverageResultSummary {
       return 0.0f;
     } else {
       float total = this.getMcDcCoverage() / this.getCoverageResults().size();
-      total = Utils.roundFLoat(1, BigDecimal.ROUND_HALF_EVEN, total);
+      total = Utils.roundFLoat(1, RoundingMode.HALF_EVEN, total);
       return total;
     }
   }
